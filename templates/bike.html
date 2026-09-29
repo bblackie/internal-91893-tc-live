@@ -1,0 +1,12 @@
+<!-- Bike Details Page Content -->
+{% extends "layout.html" %}
+
+{% block body %}
+    <h2>{{ bike.Model }}</h2>
+    <p><strong>Maker:</strong> {{ bike.Maker }}</p>
+    <p><strong>Model:</strong> {{ bike.Model }}</p>
+    <p><strong>Year:</strong> {{ bike.Year }}</p>
+    <p><strong>Price:</strong> ${{ bike.Price }}</p>
+    <p><strong>Description:</strong> {{ bike.Description }}</p>
+    <img src="{{ url_for('static', filename='images/' + bike.ImageURL) }}" alt="{{ bike.Model }}" width="400">
+{% endblock %}

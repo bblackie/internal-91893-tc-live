@@ -1,0 +1,12 @@
+
+<!-- Home Page Content -->
+{% extends "layout.html" %}
+
+{% block body %}
+    <h2>Available Bikes</h2>
+    <ul>
+        {% for bike in bikes %}
+            <li>{{ bike.Model }} by {{ bike.Maker }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

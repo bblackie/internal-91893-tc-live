@@ -1,0 +1,24 @@
+
+<!-- Home Page Content -->
+{% extends "layout.html" %}
+
+{% block body %}
+    <h2>Available MtBike</h2>
+    <div class="three-column-grid">
+        {% for MtBike in MtBikes %}
+            <div class="bike-card">
+                <h3>{{ MtBike.Model }}</h3>
+                <p><strong>Maker:</strong> {{ MtBike.Maker }}</p>
+                <p><strong>Model:</strong> {{ MtBike.Model }}</p>
+                <a href="{{ url_for('bike', id=MtBike.MtBikeID) }}">
+                    <img src="{{ url_for('static', filename='images/' + MtBike.ImageURL) }}" alt="{{ MtBike.Model }}" width="200">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <ul>
+        {% for MtBike in MtBike %}
+            <li>{{ MtBike.Model }} by {{ MtBike.Maker }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
